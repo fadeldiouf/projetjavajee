@@ -1,11 +1,11 @@
 package sn.askanbiBank.dao;
 
-import java.util.ArrayList;
-
 import sn.askanbiBank.domaine.Client;
 import sn.askanbiBank.utilis.Connexion;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IdaoClientImpl implements IdaoClient{
 
@@ -37,9 +37,29 @@ public class IdaoClientImpl implements IdaoClient{
 	}
 
 	@Override
-	public ArrayList<Client> liste() {
+	public List<Client> liste() {
 		// TODO Auto-generated method stub
-		return null;
+		List<Client> liste = new ArrayList<Client>();
+		String sql="SELECT * FROM client";
+		try {
+			pst=con.prepareStatement(sql);
+			rs=pst.executeQuery();
+			while(rs.next());
+			Client c = new Client();
+			c.setNom("nom");
+			c.setPrenom("prenom");
+			c.setAddresse("adresse");
+			c.setDatenaiss("datenaissance");
+			c.setTelephone(rs.getLong("telephone"));
+			c.setEmail("email");
+			c.setCivilite("civilite");
+			c.setGenre("genre");
+			c.setCni(rs.getLong("cni"));
+			liste.add(c);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return liste;
 	}
 
 	@Override
@@ -49,17 +69,12 @@ public class IdaoClientImpl implements IdaoClient{
 	}
 
 	@Override
-	public Client active(Client t) {
-		return null;
+	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public Client desactive(Client t) {
-		return null;
-		// TODO Auto-generated method stub
-		
-	}
+	
 
+	
 }

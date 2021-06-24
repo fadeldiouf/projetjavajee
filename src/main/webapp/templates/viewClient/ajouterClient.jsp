@@ -75,21 +75,25 @@
                 <div class="form-group">
                 <label for="exampleInputEmail1">Nom</label>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Nom">
-                  <div class="input-group-append">
-                    <span class="input-group-text"><i class="fas fa-check"></i></span>
-                  </div>
-                </div>
+		          <input type="text" class="form-control" placeholder=" nom">
+		          <div class="input-group-append">
+		            <div class="input-group-text">
+		              <span class="fas fa-user"></span>
+		            </div>
+		          </div>
+		        </div>
                 </div>
                   <!-- /.form group -->
                   <div class="form-group">
                 <label for="exampleInputEmail1">Prenom</label>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Prenom">
-                  <div class="input-group-append">
-                    <span class="input-group-text"><i class="fas fa-check"></i></span>
-                  </div>
-                </div>
+		          <input type="text" class="form-control" placeholder="prenom">
+		          <div class="input-group-append">
+		            <div class="input-group-text">
+		              <span class="fas fa-user"></span>
+		            </div>
+		          </div>
+		        </div>
                 </div>
                 <!-- /.form group -->
                 <div class="form-group">
