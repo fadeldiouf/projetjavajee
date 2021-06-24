@@ -1,12 +1,11 @@
 package sn.askanbiBank.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface Idao <T>{
 	public void save (T t);
-	public ArrayList<T> liste();
+	public List<T> liste();
 	public T update (T t);
-	public T active (T t);
-	public T desactive (T t);
+	public void delete(Long id);
 
 }
