@@ -6,7 +6,7 @@ public class Client {
 	private String prenom;
 	private String addresse;
 	private String datenaiss;
-	private Long telephone;
+	private String telephone;
 	private String email;
 	private String civilite;
 	private String genre;
@@ -15,7 +15,7 @@ public class Client {
 	public Client () {
 		super();
 	}
-	public Client (Long idclient,String nom, String prenom,String addresse,String datenaiss,Long telephone
+	public Client (Long idclient,String nom, String prenom,String addresse,String datenaiss,String telephone
 			,String email,String civilite,String genre,Long cni) {
 		super();
 		this.idclient=idclient;
@@ -62,10 +62,10 @@ public class Client {
 	public void setDatenaiss(String datenaiss) {
 		this.datenaiss = datenaiss;
 	}
-	public Long getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
-	public void setTelephone(Long telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 	public String getEmail() {

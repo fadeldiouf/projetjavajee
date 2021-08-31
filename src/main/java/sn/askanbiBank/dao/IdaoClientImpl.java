@@ -2,6 +2,7 @@ package sn.askanbiBank.dao;
 
 import sn.askanbiBank.domaine.Client;
 import sn.askanbiBank.utilis.Connexion;
+import sn.askanbiBank.utilis.SingletonConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class IdaoClientImpl implements IdaoClient{
 
-     Connection con= Connexion.connexionDB();
+     Connection con= SingletonConnection.getConnection();
      PreparedStatement pst;
      Statement stmt;
      ResultSet rs;
@@ -23,7 +24,7 @@ public class IdaoClientImpl implements IdaoClient{
 	     pst.setString(2,t.getPrenom());
 	     pst.setString(3,t.getAddresse());
 	     pst.setNString(4, t.getDatenaiss());
-	     pst.setLong(5, t.getTelephone());
+	     pst.setString(5, t.getTelephone());
 	     pst.setString(6, t.getEmail());
 	     pst.setString(7, t.getCivilite());
 	     pst.setString(8, t.getGenre());
@@ -46,14 +47,14 @@ public class IdaoClientImpl implements IdaoClient{
 			rs=pst.executeQuery();
 			while(rs.next());
 			Client c = new Client();
-			c.setNom("nom");
-			c.setPrenom("prenom");
-			c.setAddresse("adresse");
-			c.setDatenaiss("datenaissance");
-			c.setTelephone(rs.getLong("telephone"));
-			c.setEmail("email");
-			c.setCivilite("civilite");
-			c.setGenre("genre");
+			c.setNom(rs.getString("nom"));
+			c.setPrenom(rs.getString("prenom"));
+			c.setAddresse(rs.getString("adresse"));
+			c.setDatenaiss(rs.getString("datenaissance"));
+			c.setTelephone(rs.getString("telephone"));
+			c.setEmail(rs.getString("email"));
+			c.setCivilite(rs.getString("civilite"));
+			c.setGenre(rs.getString("genre"));
 			c.setCni(rs.getLong("cni"));
 			liste.add(c);
 		} catch (Exception e) {

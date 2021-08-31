@@ -18,7 +18,7 @@ import sn.askanbiBank.model.ClientModel;
  * @author Fadilou
  *
  */
-@WebServlet("/templates/viewClient/")
+@WebServlet("client")
 public class ListClient extends HttpServlet {
 
 	/**
@@ -37,7 +37,7 @@ public class ListClient extends HttpServlet {
 		List<Client> clients= metier.liste();
 		model.setClients(clients);
 		req.setAttribute("model",model);
-		req.getRequestDispatcher("listeclientActive.jsp").forward(req, resp);
+		req.getRequestDispatcher("templates/viewClient/listeclientActive.jsp").forward(req, resp);
 	}
 	
 
